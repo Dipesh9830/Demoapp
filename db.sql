@@ -1,0 +1,1 @@
+SELECT * FROM `incubator-app`.questions;
