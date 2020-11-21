@@ -1,32 +1,27 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
-
-
-const sequelize = require('./util/database');
-const user = require('./models/user');
-
+const db = require("./models/index");
+const userRoutes = require('./routes/index');
 
 
 
-const app = express();
-//const port = 8000;
-
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-});
-
-//app.listen(port, () => {
- // console.log(`Example app listening on port ${port}!`)
-//});
-
-sequelize
-  .sync({force: true})
-  .then(result => {
-    //console.log(result);
-    app.listen(8000);
+const PORT = process.env.PORT || 3000;
+var app = express();
+//app.use(express.urlencoded({extended:yes}));
+app.use(express.json());
+app.use(userRoutes);
+db.sequelize.sync().then(()=>{
+  app.listen(PORT, () => {
+    console.log("Server is running");
   })
-  .catch(err => {
-    console.log(err);
-  });
+}).catch((err)=>{
+  console.log(err);
+})
+
+
+
+
+
+
+             

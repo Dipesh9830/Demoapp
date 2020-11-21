@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": "dIpesh5$%",
+    "database": "incubator-app",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "dIpesh5$%",
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": "dIpesh5$%",
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}

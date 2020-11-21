@@ -1,58 +1,49 @@
-const Sequelize = require('sequelize');
-
-const sequelize = require('../util/database');
+module.exports = (sequelize, DataTypes) => {
 
 const question = sequelize.define('questions', {
-  id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
+  startup_id: {
+    primaryKey: true,
+    defaultValue: DataTypes.UUID,
+    type: DataTypes.INTEGER,
     allowNull: false,
-   
   },
 
-  Reasonforstartingacompany: {
-    type:Sequelize.STRING,
+  Reason_for_starting_a_company: {
+    type:DataTypes.STRING,
     allowNull: false
   },
 
-  Whatisyourindustry: {
-    type:Sequelize.STRING,
+  What_is_your_industry: {
+    type:DataTypes.STRING,
     allowNull:false
   },
 
-  Whatisyourexperienceinthisindustry: {
-    type:Sequelize.STRING,
+  What_is_your_experience_in_this_industry: {
+    type:DataTypes.STRING,
     allowNull:false
   },
 
-  Whatisyourbusinessmodel: {
-    type:Sequelize.STRING,
+  What_is_your_businessmodel: {
+    type:DataTypes.STRING,
     allowNull:false
   },
 
-  Tellusaboutyourproduct: {
-    type:Sequelize.STRING,
+  Tell_us_about_your_product: {
+    type:DataTypes.STRING,
     allowNull:false
   },
 
-  Whatisyourexitstrategy: {
-    type:Sequelize.STRING,
+  What_is_your_exit_strategy: {
+    type:DataTypes.STRING,
     allowNull:false
   },
 
-  Ifyourproducthasbeenreleased,whattractiondoyouhave: {
-    type:Sequelize.STRING,
+  If_your_product_has_been_released_what_traction_do_you_have: {
+    type:DataTypes.STRING,
     allowNull:false
   },
-
-  startup_id: {
-    type: Sequelize.INTEGER,
-    autoIncrement: true,
-    allowNull: false,
-    primaryKey: true
- 
-  }
 });
 
 
-module.exports = Question;
+return question;
+}
